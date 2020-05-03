@@ -1,0 +1,11 @@
+ts and Functionality Code Quality Documentation
+Report
+Investigation 1
+10 5 5 10
+Investigation 2
+15 5 5 10
+Investigation 3
+15 5 5 1
+
+Demonstration. Students will demonstrate their code and respond to questions from the markers – marks go towards Tests and Functionality.
+Marks will be deducted for not following specifications outlined in this document, which includes incorrect submission format and content. There will be a checklist of deliverables to ensure that you include everything required..
