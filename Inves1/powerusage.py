@@ -18,6 +18,7 @@ for line in lines:
     dates.append(s_lines[1])
 
 # just get the daily change
+# doing this creates a list that is the length of powerusage - 1
 dailyusage = [j - i for i, j in zip(powerusage[: -1], powerusage[1 :])]
 
 print("Daily usage:", dailyusage)
@@ -35,6 +36,7 @@ plt.subplot(212)
 plt.title("Daily Power Usage Over Time")
 plt.xlabel("Date")
 plt.ylabel("Energy Usage (kWh)")
-plt.plot(dates[1:], dailyusage, 'b.')
+# accounting for the length of daily usage being len(powerusage) - 1, by slicing the dates
+plt.plot(dates[1:], dailyusage, 'b--')
 
 plt.show()
