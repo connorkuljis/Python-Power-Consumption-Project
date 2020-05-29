@@ -1,69 +1,65 @@
 #
-# house.py
+# house.py - create a house object
 #
-# comments: the list of appliances should be static and can each house type can provide a string list of the appliances 
+import csv
 
-# --HOUSE SUPERCLASS
 class House():
-    myclass = "House"
+    def __init__(self, address, postcode, numResidents, numBeds, numBaths, appliancefile):
+        self.address = address
+        self.postcode = postcode
+        self.numResidents = numResidents
+        self.numBeds = numBeds
+        self.numBaths = numBaths
+        self.appliances = self.readFile(appliancefile)
 
-    def __init__(self, numBedrooms, numBathrooms, appliance, hasSolar):
-        self.numBedrooms = numBedrooms
-        self.numBathrooms = numBathrooms
-        self.appliance = appliance # could be a list of applicances
-        self.hasSolar == hasSolar
+    def getApplianceNames(self):
+        app = []
+        for row in self.appliances:
+            app.append(row[0])
+        return app
 
-    def calcEnergyOutput(self):
-        pass
+    def readFile(self, filename):
+        appliancelist = []
 
-## --HOUSE SUBCLASSES
-class HouseA(House):
-    myclass = "HouseA"
-    
-    numBedrooms = 4
-    numBathrooms = 2
-    appliance = 
+        # importing the csv file
+        with open(filename, newline='') as csvfile:
+            modelreader = csv.reader(csvfile, delimiter=':') # seperate on ':'
+            for row in modelreader:
+                appliancelist.append(row)
 
-    def __init__(self):
-        House.__init__(self,)
+        return appliancelist
 
+    def calcUsage(self):
+        usage = []
+        for row in self.appliances:
+            appliancewattage = float(row[1])
+            p_usage = row[2]
+            usagelist = [float(i) * appliancewattage for i in p_usage.split(',')] 
+            # appending usage
+            usage.append(usagelist)
+
+        total = 0.0
+        for appliance in usage:
+            for element in appliance:
+                total = total + element
+
+        return total
+
+    def printit(self):
+        print("Address: " + self.address +  "\nPostcode: " + str(self.postcode) + "\nNumber of Residents: " + str(self.numResidents) + "\nAppliances: " + str(self.getApplianceNames()) + "\nTotal Power Usage (Watts/24hr): " + str(self.calcUsage()))
+
+class Mansion(House):
+    numBeds = 5
+    numBaths = 4
+    appliancefile = "mansion.csv"
+
+    # on a right track here
+    def __init__(self, address, postcode, numResidents):
+        super().__init__(address, postcode, numResidents, self.numBeds, self.numBaths, self.appliancefile)
+
+class Flat(House):
     pass
 
-class HouseB(House):
-    myclass = "HouseB"
 
-    pass
-
-class HouseC(House):
-    myclass = "HouseC"
-
-    pass
-
-class HouseD(House):
-    myclass = "HouseD"
-
-    pass
-
-# --SUBURB CLASS
-# can make a suburb out of a list of house objects
-# IMPORTS: name, postcode, houses (ARRAY OF House Objects)
-
-class Suburb(self, name, postcode, houses):
-    self.name = name
-    self.postcode = postcode
-    self.houses = houses
-
-    def calcOutput(self):
-        pass
-
-
-
-
-
-
-
-
-# aircon will be used less in winter
-# weekday vs weekend
-
+        
 
