@@ -45,21 +45,38 @@ class House():
 
         return total
 
+
     def printit(self):
-        print("Address: " + self.address +  "\nPostcode: " + str(self.postcode) + "\nNumber of Residents: " + str(self.numResidents) + "\nAppliances: " + str(self.getApplianceNames()) + "\nTotal Power Usage (Watts/24hr): " + str(self.calcUsage()))
+        print("Address: " + self.address +  "\nPostcode: " + str(self.postcode) + "\nNumber of Residents: "  + str(self.numResidents) + "\nNumber of Beds: " + str(self.numBeds) + "\nNumber of Bathrooms: " + str(self.numBaths) + "\nAppliances: " + str(self.getApplianceNames()) + "\nTotal Power Usage (Watts/24hr): " + str(self.calcUsage()))
 
 class Mansion(House):
-    numBeds = 5
+    numBeds = 8
     numBaths = 4
     appliancefile = "mansion.csv"
 
-    # on a right track here
     def __init__(self, address, postcode, numResidents):
         super().__init__(address, postcode, numResidents, self.numBeds, self.numBaths, self.appliancefile)
 
 class Flat(House):
-    pass
+    numBeds = 2
+    numBaths = 2
+    appliancefile = "mansion.csv"
 
+    def __init__(self, address, postcode, numResidents):
+        super().__init__(address, postcode, numResidents, self.numBeds, self.numBaths, self.appliancefile)
 
+class Family(House):
+    numBeds = 4
+    numBaths = 2
+    appliancefile = "myhouse.csv"
         
+    def __init__(self, address, postcode, numResidents):
+        super().__init__(address, postcode, numResidents, self.numBeds, self.numBaths, self.appliancefile)
 
+class Studio(House):
+    numBeds = 1
+    numBaths = 1
+    appliancefile = 'myhouse.csv'
+
+    def __init__(self, address, postcode, numResidents):
+        super().__init__(address, postcode, numResidents, self.numBeds, self.numBaths, self.appliancefile)
