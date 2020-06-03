@@ -57,9 +57,6 @@ class House():
 
         return sum(npUsage)
 
-
-
-
     # returns 24hr usage from given wattage and usage record
     def calcDailyUsage(self):
         usage = self.getUsage()
