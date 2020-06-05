@@ -1,1 +1,0 @@
-./sweepTest5.sh Dianella 6059 1 10 2 1 10 2 1 10 2 1 10 2 1 10 2
