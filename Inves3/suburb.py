@@ -16,6 +16,8 @@ class Suburb():
             print(house.printit())
             print()
 
+    # REFERENCE NOTICE: may contain modified code from previous practial/lecture P06 (27th April 2020)
+    # - shelter.py
     def newHouse(self, houseType, address):
         temp = None
         if houseType == 'Mansion':

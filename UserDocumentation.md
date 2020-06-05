@@ -66,7 +66,7 @@ By reading in the csv file and performing some list operations, a chart of what 
 According to the power model file format, the third element in each row is a string of 24 numbers, representing the state of each appliance at that hour. eg 1 is maximum usage and 0 is off. It could also be in decimal format. To create a power model, every value in this string is converted to a floating point number and multiplied by the wattage for that appliances (which is the second element in each row). An example is: [2000:0,0.5...] becomes [2000:0,1000]. By using a for loop each row is sliced, performed on and appended to a new list of values which can be plotted.
 
 ## Investiagtion 3: Power Simulation
-The goal of this investigation is to simulate the daily power usage of a suburb. The investigation has 2 class model files; house and suburb. The suburb is constructed by appending house objects to a class field of the current suburb object.A suburb can be simulated the driver program `housesimulation.py` in which the number of houses are passed in thorugh command line prompts.
+The goal of this investigation is to simulate the daily power usage of a suburb. The investigation has 2 class model files; house and suburb. The suburb is constructed by appending house objects to a class field of the current suburb object. A suburb can be simulated the driver program `housesimulation.py` in which the number of houses are passed in thorugh command line prompts.
 
 The house objects includes 4 sub-classes. Mansion, Family, Flat and Studio. The house.py class model file uses the principle of object orientation; inheritence to re-use fields and methods from the base class. Each subclass has its own appliance csv file eg: a list of appliances.
 
@@ -297,10 +297,12 @@ class Suburb():
         elif houseType == "Studio":
             temp = Studio(address, self.postcode)
         else:
-            print("Error processing house -> '" + houseType + "' (please double check values)")
+            print("Error processing house -> '" + houseType + 
+                                "' (please double check values)")
         if temp:
             self.houses.append(temp)
-            print("Added " + houseType + ": " + address + " to Suburb - " + self.name + " (" + str(self.postcode) + ")")
+            print("Added " + houseType + ": " + address + " to Suburb - "
+                             + self.name + " (" + str(self.postcode) + ")")
 ```
 
 * Extra functionality. Parameter sweep explanation. 

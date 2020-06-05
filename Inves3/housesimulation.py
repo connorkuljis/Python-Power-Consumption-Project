@@ -1,6 +1,6 @@
 #
 # driver.py - driver code for creating house objects
-#
+# referenc
 import sys
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -50,34 +50,4 @@ plt.xlabel("Time (in 24hr format)")
 plt.ylabel("Energy Usage (W/hr)")
 plt.plot(time, usage)
 plt.savefig('HOUSE_MODEL' + 'MM' + str(mm) + '_FF' + str(ff) + "_FL" + str(fl) + "_ST" + str(st) + '.png')
-
-
-#Dianella.newHouse("Mansion", "65 Applecross Road", 4)
-#Dianella.newHouse("Flat", "1 Slate Street", 1)
-
-# Dianella.calcDailyUsage()
-
-#testBurb.displayHouses()
-
-
-#print("## CONSTRUCTING HOUSE OBJECTS")
-#h1 = House("65 Sattelberg Ramble", 6059, 4, 2, 4, 'myhouse.csv')
-#h1.printit()
-#hour = 23
-#h1.calcUsageAtTime(hour)
-
-#mcMansion = Mansion("abcd", 1000, 2)
-#mcMansion.printit()
-#
-#small = Flat("1 aberdeen st", 2000, 2)
-#small.printit()
-#
-#nuclear = Family("1 infinite loop", 4503, 4)
-#nuclear.printit()
-#
-#stu = Studio("1 new yorker", 54, 1)
-#stu.printit()
-
-
-
 
