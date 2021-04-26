@@ -1,5 +1,6 @@
 # Curtin University, 2020 Semester 1
 # COMP 1005
+```
 ├── Inves1
 │   ├── Figure_1.png 
 │   ├── Figure_2.png
@@ -26,4 +27,5 @@
 │   ├── mansion.csv         : appliance file for mansion house object
 │   ├── studio.csv          : appliance file for studio house object
 │   └── testscript.txt      : examples how to run the parameter sweep
+```
 
